@@ -5,3 +5,4 @@ Parar rodar basta executar a classe SubmarineApplication.java que se encontra no
 
 Durante o final do dia vou tentar trabalhar mais no README e em como executar.
 
+TODO: Criar testes: Application e SubmarineController
