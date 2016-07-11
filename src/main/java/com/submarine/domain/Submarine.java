@@ -33,7 +33,7 @@ public class Submarine {
     }
 
     public void move() {
-        this.position.setX(1);
+        this.direction.moveIn(position);
     }
 
     public void dive() {

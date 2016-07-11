@@ -1,12 +1,26 @@
 package com.submarine.domain;
 
-public interface Direction {
+public abstract class Direction implements DirectionMovement {
 
-    void setSideDirections(Direction left, Direction right);
+    protected String description;
+    protected Direction left;
+    protected Direction right;
 
-    Direction getLeft();
+    public Direction(String description) {
+        this.description = description;
+    }
 
-    Direction getRight();
+    public abstract void setSideDirections(Direction left, Direction right);
 
-    String getDescription();
+    public Direction getLeft() {
+        return left;
+    }
+
+    public Direction getRight() {
+        return right;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

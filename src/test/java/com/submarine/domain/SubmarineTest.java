@@ -1,6 +1,6 @@
-package com.submarine;
+package com.submarine.domain;
 
-import com.submarine.domain.*;
+import com.submarine.domain.directions.NorthDirection;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,13 +18,13 @@ public class SubmarineTest {
     private Direction southDirection;
 
     @Before
-    public void init() {
+    public void setUp() {
         Position position = new Position(0, 0);
 
-        northDirection = new SubmarineDirection(DirectionsConstants.NORTH);
-        westDirection = new SubmarineDirection(DirectionsConstants.WEST);
-        eastDirection = new SubmarineDirection(DirectionsConstants.EAST);
-        southDirection = new SubmarineDirection(DirectionsConstants.SOUTH);
+        northDirection = new NorthDirection(DirectionsConstants.NORTH);
+        westDirection = new NorthDirection(DirectionsConstants.WEST);
+        eastDirection = new NorthDirection(DirectionsConstants.EAST);
+        southDirection = new NorthDirection(DirectionsConstants.SOUTH);
 
         northDirection.setSideDirections(westDirection, eastDirection);
         southDirection.setSideDirections(eastDirection, westDirection);
@@ -74,7 +74,18 @@ public class SubmarineTest {
         submarine.move();
 
         assertThat(submarine.getDirection().getDescription(), is("NORTH"));
-        assertThat(submarine.getPosition().getX(), is(1));
+        assertThat(submarine.getPosition().getY(), is(1));
+
+    }
+
+    @Test
+    public void deveMoverOSubmarino3UnidadesParaONorte() {
+        submarine.move();
+        submarine.move();
+        submarine.move();
+
+        assertThat(submarine.getDirection().getDescription(), is("NORTH"));
+        assertThat(submarine.getPosition().getY(), is(3));
 
     }
 
