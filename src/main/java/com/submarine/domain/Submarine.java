@@ -44,4 +44,7 @@ public class Submarine {
         this.depth++;
     }
 
+    public String getPositionDescription() {
+        return position.getX() + " " + position.getY() + " " + depth + " " + direction.getDescription();
+    }
 }
