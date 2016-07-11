@@ -1,5 +1,8 @@
 package com.submarine;
 
+import com.submarine.model.Direction;
+import com.submarine.model.NorthDirection;
+import com.submarine.model.Position;
 import com.submarine.model.Submarine;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +17,9 @@ public class SubmarineTest {
 
     @Before
     public void init() {
-        submarine = new Submarine();
+        Position position = new Position(0, 0, 0);
+        Direction direction = new NorthDirection();
+        submarine = new Submarine(position, direction);
     }
 
     @Test
@@ -30,5 +35,10 @@ public class SubmarineTest {
     @Test
     public void submarinoDeveIniciarNaPosicao_Z_0() {
         assertThat(submarine.getPosition().getZ(), is(0));
+    }
+
+    @Test
+    public void submarinoDeveIniciarNaDirecao_Norte() {
+        assertThat(submarine.getDirection().getDescription(), is("NORTH"));
     }
 }

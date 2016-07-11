@@ -3,16 +3,18 @@ package com.submarine.model;
 public class Submarine {
 
     private Position position;
+    private Direction direction;
 
-    public Submarine() {
-        position = new Position(0, 0, 0);
+    public Submarine(Position position, Direction direction) {
+        this.position = position;
+        this.direction = direction;
     }
 
     public Position getPosition() {
         return position;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public Direction getDirection() {
+        return direction;
     }
 }
