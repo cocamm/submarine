@@ -1,9 +1,6 @@
 package com.submarine;
 
-import com.submarine.model.Direction;
-import com.submarine.model.NorthDirection;
-import com.submarine.model.Position;
-import com.submarine.model.Submarine;
+import com.submarine.domain.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,7 +15,8 @@ public class SubmarineTest {
     @Before
     public void init() {
         Position position = new Position(0, 0, 0);
-        Direction direction = new NorthDirection();
+        Direction direction = new SubmarineDirection(DirectionsConstants.NORTH);
+
         submarine = new Submarine(position, direction);
     }
 

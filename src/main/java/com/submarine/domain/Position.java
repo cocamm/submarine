@@ -1,4 +1,4 @@
-package com.submarine.model;
+package com.submarine.domain;
 
 public class Position {
 
