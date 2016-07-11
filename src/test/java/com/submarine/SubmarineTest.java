@@ -77,4 +77,35 @@ public class SubmarineTest {
         assertThat(submarine.getPosition().getX(), is(1));
 
     }
+
+    @Test
+    public void deveAlterarAProfundidadeDoSubmarinoParaMenos3() {
+        submarine.dive();
+        submarine.dive();
+        submarine.dive();
+
+        assertThat(submarine.getDepth(), is(-3));
+    }
+
+    @Test
+    public void deveAlterarAProfundidadeDoSubmarinoPara2() {
+        submarine.surface();
+        submarine.surface();
+
+        assertThat(submarine.getDepth(), is(2));
+    }
+
+    @Test
+    public void deveAlterarAProfundidadeParaMenos2EDepoisPara3() {
+        submarine.dive();
+        submarine.dive();
+        assertThat(submarine.getDepth(), is(-2));
+
+        submarine.surface();
+        submarine.surface();
+        submarine.surface();
+        submarine.surface();
+        submarine.surface();
+        assertThat(submarine.getDepth(), is(3));
+    }
 }
