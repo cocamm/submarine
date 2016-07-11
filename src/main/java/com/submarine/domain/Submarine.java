@@ -17,4 +17,17 @@ public class Submarine {
     public Direction getDirection() {
         return direction;
     }
+
+
+    public void rotateRigtht() {
+        direction = direction.getRight();
+    }
+
+    public void rotateLeft() {
+        direction = direction.getLeft();
+    }
+
+    public void move() {
+        this.position.setX(1);
+    }
 }
