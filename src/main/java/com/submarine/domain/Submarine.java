@@ -3,10 +3,12 @@ package com.submarine.domain;
 public class Submarine {
 
     private Position position;
+    private int depth;
     private Direction direction;
 
-    public Submarine(Position position, Direction direction) {
+    public Submarine(Position position, int depth, Direction direction) {
         this.position = position;
+        this.depth = depth;
         this.direction = direction;
     }
 
@@ -14,10 +16,13 @@ public class Submarine {
         return position;
     }
 
+    public int getDepth() {
+        return depth;
+    }
+
     public Direction getDirection() {
         return direction;
     }
-
 
     public void rotateRigtht() {
         direction = direction.getRight();
@@ -30,4 +35,13 @@ public class Submarine {
     public void move() {
         this.position.setX(1);
     }
+
+    public void dive() {
+        this.depth--;
+    }
+
+    public void surface() {
+        this.depth++;
+    }
+
 }

@@ -19,7 +19,7 @@ public class SubmarineTest {
 
     @Before
     public void init() {
-        Position position = new Position(0, 0, 0);
+        Position position = new Position(0, 0);
 
         northDirection = new SubmarineDirection(DirectionsConstants.NORTH);
         westDirection = new SubmarineDirection(DirectionsConstants.WEST);
@@ -32,7 +32,7 @@ public class SubmarineTest {
         westDirection.setSideDirections(southDirection, northDirection);
 
 
-        submarine = new Submarine(position, northDirection);
+        submarine = new Submarine(position, 0, northDirection);
     }
 
     @Test
@@ -46,8 +46,8 @@ public class SubmarineTest {
     }
 
     @Test
-    public void submarinoDeveIniciarNaPosicao_Z_0() {
-        assertThat(submarine.getPosition().getZ(), is(0));
+    public void submarinoDeveIniciarComProfundidade_0() {
+        assertThat(submarine.getDepth(), is(0));
     }
 
     @Test

@@ -4,12 +4,10 @@ public class Position {
 
     private int x;
     private int y;
-    private int z;
 
-    public Position(int x, int y, int z) {
+    public Position(int x, int y) {
         this.x = x;
         this.y = y;
-        this.z = z;
     }
 
     public int getX() {
@@ -26,13 +24,5 @@ public class Position {
 
     public void setY(int y) {
         this.y = y;
-    }
-
-    public int getZ() {
-        return z;
-    }
-
-    public void setZ(int z) {
-        this.z = z;
     }
 }
