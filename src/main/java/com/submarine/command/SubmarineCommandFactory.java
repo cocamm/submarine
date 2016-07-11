@@ -16,12 +16,11 @@ public class SubmarineCommandFactory {
 
         CommandType commandType = CommandType.getCommand(command);
 
-        if(command.equals("L")) {
-            return new RotateLeftCommand(this.submarine);
-        } else if(command.equals("R")) {
-            return new RotateLeftCommand(this.submarine);
+        SubmarineCommand submarineCommand = commandType.createCommand(submarine);
+        if(submarineCommand == null) {
+            throw new CommandNotFoundException(String.format(String.format("Commando %s não encontrado.", command)));
         }
 
-        return null;
+        return submarineCommand;
     }
 }
