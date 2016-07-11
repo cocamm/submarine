@@ -51,6 +51,6 @@ public enum CommandType {
             }
         }
 
-        throw new CommandNotFoundException(String.format("Commando %s não encontrado.", command));
+        throw new CommandNotFoundException("Commando " + command + " não encontrado.");
     }
 }

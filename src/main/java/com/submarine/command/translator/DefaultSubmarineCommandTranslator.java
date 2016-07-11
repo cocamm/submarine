@@ -22,17 +22,10 @@ public class DefaultSubmarineCommandTranslator implements SubmarineCommandTransl
 
         String[] cmdsArray = commands.split("");
         for (String command : cmdsArray) {
-
-            if(validCommand(command)) {
-                SubmarineCommand submarineCommand = new SubmarineCommandFactory(submarine).create(command);
-                this.submarineCommands.add(submarineCommand);
-            }
+            SubmarineCommand submarineCommand = new SubmarineCommandFactory(submarine).create(command);
+            this.submarineCommands.add(submarineCommand);
         }
 
         return this.submarineCommands;
-    }
-
-    private boolean validCommand(String command) {
-        return true;
     }
 }

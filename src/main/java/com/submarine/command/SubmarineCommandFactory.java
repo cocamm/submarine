@@ -18,7 +18,7 @@ public class SubmarineCommandFactory {
 
         SubmarineCommand submarineCommand = commandType.createCommand(submarine);
         if(submarineCommand == null) {
-            throw new CommandNotFoundException(String.format(String.format("Commando %s não encontrado.", command)));
+            throw new CommandNotFoundException("Commando " + command + " não encontrado.");
         }
 
         return submarineCommand;
