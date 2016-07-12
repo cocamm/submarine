@@ -51,6 +51,6 @@ public enum CommandType {
             }
         }
 
-        throw new CommandNotFoundException("Commando " + command + " não encontrado.");
+        throw new CommandNotFoundException(command);
     }
 }
